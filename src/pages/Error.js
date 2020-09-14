@@ -1,6 +1,9 @@
 import React from "react"
+import Hero from "../components/Hero"
+import {Link} from "react-router-dom"
 
 const NotFound = () => {
-  return <div>Not found</div>
+  return <Hero></Hero>
 }
+
 export default NotFound
