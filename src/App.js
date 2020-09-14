@@ -1,19 +1,24 @@
 import React, {Component} from "react"
-import {Route} from "react-router-dom"
-import CssBaseline from "@material-ui/core/CssBaseline"
-import {MuiThemeProvider} from "@material-ui/core/styles"
-import theme from "./theme"
-import Login from "./components/Login"
-import Paper from "./components/form"
+import {Route, Switch} from "react-router-dom"
+import Home from "./pages/Home"
+import Rooms from "./pages/Rooms"
+import SingleRoom from "./pages/SingleRoom"
+import NotFound from "./pages/Error"
+import Navbar from "./components/Navbar"
+import "./App.css"
 
 class App extends Component {
   render() {
     return (
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        <Route exact path="/" component={Login} />
-        <Route exact path="/p" component={Paper} />
-      </MuiThemeProvider>
+      <>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/rooms" component={Rooms} />
+          <Route exact path="/rooms/:slug" component={SingleRoom} />
+          <Route component={NotFound} />
+        </Switch>
+      </>
     )
   }
 }
