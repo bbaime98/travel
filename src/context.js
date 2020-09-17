@@ -65,6 +65,31 @@ class RoomProvider extends Component {
     )
   }
 
+  filterRooms = () => {
+    let {
+      rooms,
+      type,
+      capacity,
+      price,
+      minSize,
+      maxSize,
+      breakfast,
+      pets,
+    } = this.state
+
+    let tempRooms = [...rooms]
+
+    capacity = parseInt(capacity)
+    price = parseInt(price)
+    // filter by type
+    if (type !== "all") {
+      tempRooms = tempRooms.filter((room) => room.type === type)
+    }
+    this.setState({
+      sortedRooms: tempRooms,
+    })
+  }
+
   render() {
     return (
       <RoomContext.Provider
