@@ -1,3 +1,6 @@
 # Enjoy your traveling by staying in luxurious rooms.
 
-- This platform was developed using React Js
+- This platform was developed using:
+-  React Js
+-  CSS
+-  HTML
